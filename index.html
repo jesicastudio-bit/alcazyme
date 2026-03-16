@@ -353,13 +353,56 @@
             .comparison-container { aspect-ratio: 4/3; }
         }
 
+        /* TWEAKS FOR MOBILE & RESPONSIVENESS */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero-actions { flex-direction: column; }
+            
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 80px;
+                height: auto; /* Memastikan konten tidak tertumpuk (overlap) pada layar kecil */
+            }
+            .hero-text p {
+                margin-bottom: 2.5rem; /* Menambahkan ruang agar tombol tidak menempel teks */
+                font-size: 1.1rem;
+            }
+            .hero-actions { 
+                flex-direction: column; 
+                width: 100%;
+            }
+            .hero-actions .btn-large {
+                width: 100%; /* Tombol memenuhi lebar layar pada mobile */
+            }
+
             .timeline::before { left: 25px; }
             .timeline-dot { width: 40px; height: 40px; min-width: 40px; font-size: 1rem; margin-left: 5px; }
             .timeline-content { margin-left: 1rem; padding: 1.5rem; }
-            .tabs-nav { flex-direction: column; }
+            
+            /* TABS NAVIGATION TWEAK FOR MOBILE */
+            .tabs-nav { 
+                flex-direction: column; 
+                background: transparent;
+                gap: 0.8rem;
+                padding: 0;
+            }
+            .tab-btn {
+                border-radius: 12px;
+                background: #f8fafc;
+                border: 2px solid #e2e8f0;
+                padding: 1rem;
+                text-align: center;
+                font-size: 1rem;
+            }
+            .tab-btn.active {
+                background: #ffffff;
+                border-color: var(--clr-primary);
+                color: var(--clr-primary-dark);
+                box-shadow: var(--shadow-sm);
+            }
+            .tab-content {
+                padding: 1.5rem 1rem 2rem 1rem;
+            }
+
             .chart-container { height: 250px; margin-bottom: 4rem; }
             .label { font-size: 0.75rem; }
             .lightbox-prev { left: 0.5rem; } .lightbox-next { right: 0.5rem; }
@@ -993,15 +1036,15 @@
                 <div class="footer-links">
                     <h4>References</h4>
                     <ul>
-                        <li><a href="#">Kenconojati H. et al. (2020) Daphnia sp. test</a></li>
-                        <li><a href="#">Janetasari & Purwono (2013) Brantas River</a></li>
-                        <li><a href="#">Sulisetijono (2018) Lerak tree traits</a></li>
-                        <li><a href="#">Juliadi Ertawan et al. (2022) Eco Enzyme Uses</a></li>
+                        <li><a href="https://www.google.com/search?q=Kenconojati+H.+et+al.+(2020)+Daphnia+sp.+test" target="_blank" rel="noopener noreferrer">Kenconojati H. et al. (2020) Daphnia sp. test</a></li>
+                        <li><a href="https://www.google.com/search?q=Janetasari+%26+Purwono+(2013)+Brantas+River" target="_blank" rel="noopener noreferrer">Janetasari & Purwono (2013) Brantas River</a></li>
+                        <li><a href="https://www.google.com/search?q=Sulisetijono+(2018)+Lerak+tree+traits" target="_blank" rel="noopener noreferrer">Sulisetijono (2018) Lerak tree traits</a></li>
+                        <li><a href="https://www.google.com/search?q=Juliadi+Ertawan+et+al.+(2022)+Eco+Enzyme+Uses" target="_blank" rel="noopener noreferrer">Juliadi Ertawan et al. (2022) Eco Enzyme Uses</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>This website was created by <strong>@hendratno.penok</strong> &bull; 2026</p>
+                <p>This website was created by <strong><a href="https://www.instagram.com/hendratno.penok/" target="_blank" style="color: var(--clr-primary-light); text-decoration: none;">@hendratno.penok</a></strong> &bull; 2026</p>
                 <p>&copy; 2026 SMP Negeri 1 Banjarmasin - Research Project. All rights reserved.</p>
             </div>
         </div>
