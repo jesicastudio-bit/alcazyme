@@ -125,99 +125,17 @@
         .icon-wrap.blue { background: rgba(59, 130, 246, 0.1); color: #3B82F6; }
         .icon-wrap.pink { background: rgba(236, 72, 153, 0.1); color: #EC4899; }
 
-        /* ========================================= */
-        /* FITUR BARU 1: BEFORE / AFTER SLIDER       */
-        /* ========================================= */
-        .comparison-section {
-            background-color: #0F1713;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .comparison-section h2, .comparison-section .subtitle {
-            color: white;
-            text-align: center;
-        }
-
-        .comparison-container {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            margin: 3rem auto 0;
-            aspect-ratio: 16/9; /* Proporsi gambar ilustrasi Anda */
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            cursor: ew-resize; /* Kursor panah kiri-kanan */
-        }
-
-        .comparison-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-
-        .img-after { /* Gambar Bersih (Lapisan Bawah) */
-            z-index: 1;
-        }
-
-        .img-before { /* Gambar Kotor (Lapisan Atas yang bisa dipotong) */
-            z-index: 2;
-            width: 50%; /* Nilai awal 50% */
-            border-right: 4px solid var(--clr-primary);
-        }
-
-        .comparison-slider {
-            position: absolute;
-            top: 0;
-            left: 50%; /* Nilai awal 50% */
-            width: 40px;
-            height: 100%;
-            margin-left: -20px;
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none; /* Biarkan container yang menangkap event mouse/touch */
-        }
-
-        .comparison-handle {
-            width: 40px;
-            height: 40px;
-            background: var(--clr-primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-            font-size: 1.2rem;
-            border: 3px solid white;
-        }
-
-        /* Label Before After */
-        .comp-label {
-            position: absolute;
-            top: 20px;
-            padding: 5px 15px;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            backdrop-filter: blur(5px);
-            z-index: 4;
-        }
-        .comp-label.left { left: 20px; }
-        .comp-label.right { right: 20px; }
-
+        /* Before/After Slider */
+        .comparison-section { background-color: #0F1713; color: white; position: relative; overflow: hidden; }
+        .comparison-section h2, .comparison-section .subtitle { color: white; text-align: center; }
+        .comparison-container { position: relative; width: 100%; max-width: 900px; margin: 3rem auto 0; aspect-ratio: 16/9; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); cursor: ew-resize; }
+        .comparison-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+        .img-after { z-index: 1; }
+        .img-before { z-index: 2; width: 50%; border-right: 4px solid var(--clr-primary); }
+        .comparison-slider { position: absolute; top: 0; left: 50%; width: 40px; height: 100%; margin-left: -20px; z-index: 3; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+        .comparison-handle { width: 40px; height: 40px; background: var(--clr-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(0,0,0,0.5); font-size: 1.2rem; border: 3px solid white; }
+        .comp-label { position: absolute; top: 20px; padding: 5px 15px; background: rgba(0,0,0,0.6); color: white; border-radius: 20px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; backdrop-filter: blur(5px); z-index: 4; }
+        .comp-label.left { left: 20px; } .comp-label.right { right: 20px; }
 
         /* Eco Enzyme Specific Section */
         .eco-enzyme-section { background-color: #E2F0EA; position: relative; overflow: hidden; }
@@ -225,9 +143,77 @@
         .eco-enzyme-img { border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); width: 100%; height: 500px; object-fit: cover; }
         .feature-list { list-style: none; margin-top: 2rem; }
         .feature-list li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
-        .feature-list .icon-box { background: var(--clr-primary); color: white; padding: 0.5rem; border-radius: 8px; font-size: 1.25rem; display: flex; }
+        .feature-list .icon-box { background: var(--clr-primary); color: white; padding: 0.5rem; border-radius: 8px; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; min-width: 45px; height: 45px; }
 
-        /* Ingredients Section */
+        /* ===================================================================== */
+        /* HORIZONTAL 16:9 INGREDIENT SHOWCASE (Aloe Vera & Cananga)             */
+        /* ===================================================================== */
+        .ingredient-vertical {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inv-img-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+            cursor: zoom-in;
+            background-color: #e2e8f0;
+        }
+        .inv-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .inv-img-container:hover img {
+            transform: scale(1.03);
+        }
+        .inv-text-content {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+        .inv-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            width: 100%;
+        }
+        .inv-feature-item {
+            background: var(--clr-surface);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition);
+        }
+        .inv-feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .inv-feature-item .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        /* ===================================================================== */
+
+        /* Ingredients 4-Grid Section */
         .ingredients-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; margin-top: 4rem; }
         .ingredient-card { border-radius: var(--border-radius); overflow: hidden; background: var(--clr-surface); box-shadow: var(--shadow-sm); transition: var(--transition); height: 100%; display: flex; flex-direction: column; }
         .ingredient-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-10px); }
@@ -310,87 +296,29 @@
         .lightbox-indicator { position: absolute; top: 2.5rem; left: 2rem; color: rgba(255,255,255,0.6); font-size: 1rem; letter-spacing: 2px; }
         .lightbox.single-mode .lightbox-nav, .lightbox.single-mode .lightbox-indicator { display: none !important; }
 
-        /* Advantages & Team */
+        /* Advantages */
         .advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 3rem; }
         .advantage-card { text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+        /* VERTICAL EDITORIAL LAYOUT FOR SUSTAINABILITY */
+        .vertical-editorial-wrapper { background: var(--clr-surface); padding: 5rem 0; }
+        .editorial-block { display: flex; flex-direction: column; align-items: center; margin-bottom: 7rem; padding: 0 1rem; }
+        .editorial-block:last-child { margin-bottom: 0; }
+        .ed-img-container { width: 100%; max-width: 1000px; aspect-ratio: 16/9; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 3rem; cursor: zoom-in; position: relative; background-color: #e2e8f0; }
+        .ed-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .ed-img-container:hover img { transform: scale(1.03); }
+        .ed-text { max-width: 800px; text-align: center; }
+        .ed-subtitle { font-size: 0.85rem; letter-spacing: 4px; color: var(--clr-primary-dark); margin-bottom: 1rem; display: block; font-weight: 700; }
+        .ed-text h2 { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1.2rem; color: var(--clr-secondary); }
+        .ed-text p { font-size: 1.15rem; line-height: 1.9; color: var(--clr-text-muted); font-weight: 300; }
+        .ed-divider { width: 50px; height: 3px; background-color: var(--clr-primary); margin: 4rem auto 0; opacity: 0.5; }
+
         .subtle-bg { background-color: #F1F5F9; }
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
         .team-card { text-align: center; padding: 2rem; }
         .avatar { width: 80px; height: 80px; background: rgba(18, 185, 129, 0.1); color: var(--clr-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1rem; }
         .supervisor { margin: 2rem auto 0; max-width: 400px; text-align: center; background: var(--clr-primary); color: white; }
         .supervisor h4 { color: white; font-size: 1.5rem; } .supervisor p { color: rgba(255,255,255,0.8); }
-
-        /* ========================================= */
-        /* FITUR BARU 2: DOWNLOAD RESOURCE SECTION   */
-        /* ========================================= */
-        .download-section {
-            background: linear-gradient(135deg, var(--clr-primary-dark), var(--clr-secondary));
-            color: white;
-            text-align: center;
-            border-radius: var(--border-radius-lg);
-            padding: 4rem 2rem;
-            margin-bottom: 5rem;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .download-section::before {
-            content: '\2193';
-            font-family: 'Phosphor'; /* Using default fallback if icon fails */
-            position: absolute;
-            font-size: 15rem;
-            opacity: 0.05;
-            top: -20px;
-            right: -20px;
-            transform: rotate(-15deg);
-        }
-
-        .download-section h2 { color: white; margin-bottom: 1rem; }
-        .download-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .btn-white {
-            background: white;
-            color: var(--clr-secondary);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .btn-glass {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: var(--transition);
-        }
-        .btn-glass:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
-        }
-
 
         /* Footer */
         .footer { background: var(--clr-surface-dark); color: var(--clr-text-light); padding: 4rem 0 2rem; }
@@ -403,7 +331,10 @@
         .footer-links li { margin-bottom: 0.5rem; }
         .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s ease; }
         .footer-links a:hover { color: var(--clr-primary); }
+        
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); font-size: 0.875rem; }
+        .footer-bottom p { margin-bottom: 0.5rem; }
+        .footer-bottom p:last-child { margin-bottom: 0; opacity: 0.7; }
 
         /* Animations */
         .animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
@@ -434,9 +365,14 @@
             .lightbox-prev { left: 0.5rem; } .lightbox-next { right: 0.5rem; }
             .gallery-main-view { height: 300px; }
             .thumbnail-item { flex: 0 0 70px; height: 55px; }
-            .comparison-container { aspect-ratio: 1/1; } /* Kotak di layar HP */
+            .comparison-container { aspect-ratio: 1/1; }
             .comp-label { font-size: 0.7rem; padding: 3px 10px; }
-            .download-buttons { flex-direction: column; }
+            
+            .ed-text { padding-top: 1.5rem; }
+            .ed-text p { font-size: 1rem; }
+            .editorial-block { margin-bottom: 4rem; }
+            .ed-img-container { margin-bottom: 1.5rem; }
+            .inv-features { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -447,9 +383,10 @@
             <a href="#" class="logo">Alcazyme<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#eco-enzyme">Eco Enzyme</a></li>
+                <li><a href="#eco-enzyme">Core Ingredients</a></li>
                 <li><a href="#impact">Visual Impact</a></li>
-                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
             </ul>
         </div>
     </nav>
@@ -463,7 +400,7 @@
                 <h1 class="fade-in-up delay-1">The Future of <br><span class="highlight-text">Sustainable</span> Cleaning</h1>
                 <p class="fade-in-up delay-2">Alcazyme is a revolutionary aromatic detergent crafted from Aloe vera, Cananga Flowers, and Eco Enzyme. Effective against stubborn stains, safe for aquatic ecosystems, and exceptionally fragrant.</p>
                 <div class="hero-actions fade-in-up delay-3">
-                    <a href="#impact" class="btn-primary btn-large">Lihat Perubahan <i class="ph ph-magic-wand"></i></a>
+                    <a href="#impact" class="btn-primary btn-large">See the Impact <i class="ph ph-magic-wand"></i></a>
                     <a href="#eco-enzyme" class="btn-secondary btn-large"><i class="ph ph-info"></i> Discover Eco Enzyme</a>
                 </div>
             </div>
@@ -480,7 +417,7 @@
             <div class="grid-2">
                 <div class="problem-card card glass animate-on-scroll fade-in-left">
                     <img src="assets/detergent_crisis.webp" 
-                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/f87171/ffffff?text=Krisis+Lingkungan+(Detergent)'" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/f87171/ffffff?text=Environmental+Crisis+(Detergent)'" 
                          alt="The Detergent Crisis" class="card-img-top"
                          onclick="openLightboxSingle(this)">
                     <div class="icon-wrap error"><i class="ph ph-warning"></i></div>
@@ -490,7 +427,7 @@
                 </div>
                 <div class="solution-card card glass animate-on-scroll fade-in-right delay-1">
                     <img src="assets/nature_solution.webp" 
-                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/34D399/ffffff?text=Solusi+Alam+(Cleaning+Power)'" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/34D399/ffffff?text=Nature%27s+Solution+(Cleaning+Power)'" 
                          alt="Nature's Cleaning Power" class="card-img-top"
                          onclick="openLightboxSingle(this)">
                     <div class="icon-wrap success"><i class="ph ph-check-circle"></i></div>
@@ -502,29 +439,26 @@
         </div>
     </section>
 
-    <!-- FITUR BARU 1: BEFORE/AFTER SLIDER SECTION -->
+    <!-- BEFORE/AFTER SLIDER SECTION -->
     <section class="comparison-section section-padding" id="impact">
         <div class="container">
             <div class="section-title text-center animate-on-scroll fade-in-up">
-                <span class="subtitle">Dampak Nyata</span>
-                <h2>Visualisasi Perubahan Lingkungan</h2>
-                <p>Geser garis di bawah ini untuk melihat kontras antara sungai yang tercemar detergen konvensional dengan ekosistem yang kembali pulih akibat perubahan perilaku dan penggunaan bahan ramah lingkungan.</p>
+                <span class="subtitle">Real Impact</span>
+                <h2>Visualizing Environmental Change</h2>
+                <p>Slide the line below to see the contrast between a river polluted by conventional detergents and an ecosystem restored through behavioral change and eco-friendly products.</p>
             </div>
 
             <div class="comparison-container animate-on-scroll fade-in-up delay-1" id="comparison-slider-container">
-                <!-- Gambar Latar (Sesudah / Bersih) -->
                 <img src="assets/sungai_bersih.webp" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/1200x800/10B981/ffffff?text=Lingkungan+Bersih+(After)'" 
-                     alt="Lingkungan Bersih" class="comparison-img img-after">
-                <div class="comp-label right">Sesudah</div>
+                     onerror="this.onerror=null; this.src='https://placehold.co/1200x800/10B981/ffffff?text=Clean+Environment+(After)'" 
+                     alt="Clean Environment" class="comparison-img img-after">
+                <div class="comp-label right">After</div>
                 
-                <!-- Gambar Depan (Sebelum / Kotor) yang akan di "masking" ukurannya -->
                 <img src="assets/sungai_kotor.webp" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/1200x800/475569/ffffff?text=Lingkungan+Tercemar+(Before)'" 
-                     alt="Lingkungan Tercemar" class="comparison-img img-before" id="img-before">
-                <div class="comp-label left">Sebelum</div>
+                     onerror="this.onerror=null; this.src='https://placehold.co/1200x800/475569/ffffff?text=Polluted+Environment+(Before)'" 
+                     alt="Polluted Environment" class="comparison-img img-before" id="img-before">
+                <div class="comp-label left">Before</div>
 
-                <!-- Slider Handle Tengah -->
                 <div class="comparison-slider" id="comparison-slider">
                     <div class="comparison-handle">
                         <i class="ph ph-arrows-left-right"></i>
@@ -533,41 +467,40 @@
             </div>
             
             <p style="text-align: center; font-size: 0.9rem; color: #94a3b8; margin-top: 15px;">
-                <em>*Ilustrasi konseptual oleh tim riset</em>
+                <em>*Conceptual illustration by the research team</em>
             </p>
         </div>
     </section>
 
     <!-- Eco Enzyme Section -->
     <section class="eco-enzyme-section section-padding" id="eco-enzyme">
-        <!-- ... Konten Eco Enzyme Tetap Sama ... -->
         <div class="container">
             <div class="eco-enzyme-grid">
                 <div class="eco-enzyme-content animate-on-scroll fade-in-left">
-                    <span class="subtitle">Keajaiban Fermentasi Organik</span>
-                    <h2>Apa itu Eco Enzyme?</h2>
-                    <p>Eco Enzyme adalah cairan multifungsi yang dihasilkan dari proses fermentasi limbah organik dapur (seperti kulit buah dan sayuran), gula merah muda (molase), dan air. Cairan ini merupakan kunci utama dari daya bersih Alcazyme.</p>
+                    <span class="subtitle">The Magic of Organic Fermentation</span>
+                    <h2>What is Eco Enzyme?</h2>
+                    <p>Eco Enzyme is a multifunctional liquid produced from the fermentation of organic kitchen waste (such as fruit and vegetable peels), brown sugar (molasses), and water. This liquid is the primary key to Alcazyme's cleaning power.</p>
                     
                     <ul class="feature-list">
                         <li>
                             <div class="icon-box"><i class="ph ph-flask"></i></div>
                             <div>
-                                <h4>Proses Pembuatan (Rasio 1:3:10)</h4>
-                                <p>Difermentasi secara anaerob selama 3 bulan tanpa sinar matahari. Menggunakan rasio emas: 1 bagian gula merah, 3 bagian kulit buah (jeruk, nanas, semangka, melon, buah naga), dan 10 bagian air bersih.</p>
+                                <h4>Production Process (1:3:10 Ratio)</h4>
+                                <p>Anaerobically fermented for 3 months away from sunlight. Uses the golden ratio: 1 part brown sugar, 3 parts fruit peels (orange, pineapple, watermelon, melon, dragon fruit), and 10 parts clean water.</p>
                             </div>
                         </li>
                         <li>
                             <div class="icon-box"><i class="ph ph-sparkle"></i></div>
                             <div>
-                                <h4>Fungsi & Kandungan Aktif</h4>
-                                <p>Sangat kaya akan enzim <strong>amilase, protease, dan lipase</strong> yang secara aktif memecah noda organik membandel (lemak, protein, pati). Berfungsi ganda sebagai sabun cair, disinfektan, hingga penjernih air sungai yang tercemar.</p>
+                                <h4>Functions & Active Compounds</h4>
+                                <p>Highly rich in <strong>amylase, protease, and lipase</strong> enzymes that actively break down stubborn organic stains (fat, protein, starch). Doubles as liquid soap, disinfectant, and even a purifier for polluted rivers.</p>
                             </div>
                         </li>
                         <li>
                             <div class="icon-box"><i class="ph ph-recycle"></i></div>
                             <div>
-                                <h4>Keuntungan Maksimal</h4>
-                                <p>Sangat ekonomis, terbuat dari bahan alami yang aman, dan secara langsung membantu <strong>mengurangi volume limbah organik rumah tangga</strong> yang berakhir di tempat pembuangan akhir.</p>
+                                <h4>Maximum Benefits</h4>
+                                <p>Highly economical, made from safe natural ingredients, and directly helps <strong>reduce the volume of household organic waste</strong> ending up in landfills.</p>
                             </div>
                         </li>
                     </ul>
@@ -575,17 +508,95 @@
                 <div class="eco-enzyme-media animate-on-scroll fade-in-right delay-1">
                     <img src="assets/eco_enzyme_fermentation.webp" 
                          onerror="this.onerror=null; this.src='https://placehold.co/800x1000/0A2E1C/12B981?text=assets/eco_enzyme_fermentation.webp'" 
-                         alt="Proses Fermentasi Eco Enzyme" class="eco-enzyme-img" style="cursor: zoom-in;" onclick="openLightboxSingle(this)">
+                         alt="Eco Enzyme Fermentation Process" class="eco-enzyme-img" style="cursor: zoom-in;" onclick="openLightboxSingle(this)">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Ingredients Section -->
-    <section class="ingredients section-padding" id="ingredients">
+    <!-- Aloe Vera Horizontal/Vertical Showcase -->
+    <section class="section-padding subtle-bg" id="aloe-vera">
+        <div class="container">
+            <div class="ingredient-vertical animate-on-scroll fade-in-up">
+                
+                <div class="inv-img-container">
+                    <img src="assets/aloe_vera_detail.webp" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/1600x900/34D399/059669?text=assets/aloe_vera_detail.webp'" 
+                         alt="Aloe Vera Extract" onclick="openLightboxSingle(this)">
+                </div>
+                
+                <div class="inv-text-content">
+                    <span class="subtitle">Gentle Natural Surfactant</span>
+                    <h2>Aloe Vera</h2>
+                    <p>Aloe vera (<em>Aloe barbadensis miller</em>) is a thick, fleshy succulent plant long known for its rich benefits. In Alcazyme, this plant plays a crucial role as a natural cleaning agent replacing harsh chemicals.</p>
+                </div>
+
+                <div class="inv-features">
+                    <div class="inv-feature-item">
+                        <div class="icon-box" style="background: var(--clr-primary);"><i class="ph ph-plant"></i></div>
+                        <h4>Availability & Composition</h4>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Abundant and easy to cultivate in tropical climates like Indonesia. Rich in <strong>natural saponins</strong> (foam-forming compounds), lignin, enzymes, as well as various vitamins and minerals.</p>
+                    </div>
+                    <div class="inv-feature-item">
+                        <div class="icon-box" style="background: var(--clr-primary-dark);"><i class="ph ph-drop"></i></div>
+                        <h4>Primary Functions</h4>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Generally widely used as a natural moisturizer, mild burn healer, natural antibacterial, and base ingredient in the cosmetics industry.</p>
+                    </div>
+                    <div class="inv-feature-item">
+                        <div class="icon-box" style="background: var(--clr-secondary);"><i class="ph ph-washing-machine"></i></div>
+                        <h4>Function in Alcazyme</h4>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">The saponin content acts as a <strong>natural surfactant</strong> that produces foam to bind dirt particles on the fabric. Meanwhile, lignin helps maintain the softness of the user's hands during manual washing.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cananga Flowers Horizontal/Vertical Showcase -->
+    <section class="section-padding" id="cananga" style="background-color: #FFFDF5;">
+        <div class="container">
+            <div class="ingredient-vertical animate-on-scroll fade-in-up">
+                
+                <div class="inv-img-container">
+                    <img src="assets/cananga_detail.webp" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/1600x900/EAB308/FFFFFF?text=assets/cananga_detail.webp'" 
+                         alt="Cananga Flowers" onclick="openLightboxSingle(this)">
+                </div>
+                
+                <div class="inv-text-content">
+                    <span class="subtitle">Traditional Aromatherapy</span>
+                    <h2>Cananga Flowers</h2>
+                    <p>Cananga flowers (<em>Cananga odorata</em>) are traditional tropical greenish-yellow flowers known for their intense and soothing fragrance. These flowers are the key differentiating element of Alcazyme from other natural detergents.</p>
+                </div>
+
+                <div class="inv-features">
+                    <div class="inv-feature-item">
+                        <div class="icon-box" style="background: var(--clr-accent);"><i class="ph ph-flower-lotus"></i></div>
+                        <h4>Availability & Composition</h4>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Grows wildly and is widely cultivated locally in Indonesia, including the Banjarmasin area. Contains high <strong>essential oils</strong>, linalool, and benzyl acetate.</p>
+                    </div>
+                    <div class="inv-feature-item">
+                        <div class="icon-box" style="background: #D97706;"><i class="ph ph-wind"></i></div>
+                        <h4>Primary Functions</h4>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Traditionally used for aromatherapy, stress relaxation, cultural rituals, and even exported as a base ingredient for world-class perfumes.</p>
+                    </div>
+                    <div class="inv-feature-item">
+                        <div class="icon-box" style="background: #92400E;"><i class="ph ph-t-shirt"></i></div>
+                        <h4>Function in Alcazyme</h4>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Acts as a <strong>natural aromatic agent (fragrance)</strong> that completely replaces toxic synthetic perfumes. This formulation provides a fresh, long-lasting scent that clings to fabric fibers while being respiratory-friendly.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Ingredients Summary Section -->
+    <section class="ingredients section-padding subtle-bg" id="ingredients">
         <div class="container">
             <div class="section-title text-center animate-on-scroll fade-in-up">
-                <span class="subtitle">Natural Alchemy</span>
+                <span class="subtitle">Natural Alchemy Summary</span>
                 <h2>4 Powerful Core Ingredients</h2>
                 <p>Meticulously selected and blended in a 150:25:1 ratio for optimal performance.</p>
             </div>
@@ -593,7 +604,7 @@
             <div class="ingredients-grid">
                 <div class="ingredient-card animate-on-scroll fade-in-up">
                     <div class="img-wrapper">
-                        <img src="assets/aloe_vera.webp" onerror="this.onerror=null; this.src='https://placehold.co/800x600/e2e8f0/64748b?text=assets/aloe_vera.webp'" alt="Aloe Vera">
+                        <img src="assets/aloe_vera.webp" onerror="this.fallback(this, 'assets/aloe_vera.webp')" alt="Aloe Vera">
                         <div class="overlay"></div>
                     </div>
                     <div class="ingredient-content">
@@ -604,7 +615,7 @@
 
                 <div class="ingredient-card animate-on-scroll fade-in-up delay-1">
                     <div class="img-wrapper">
-                        <img src="assets/eco_enzyme_ingredient.webp" onerror="this.onerror=null; this.src='https://placehold.co/800x600/e2e8f0/64748b?text=assets/eco_enzyme_ingredient.webp'" alt="Eco Enzyme">
+                        <img src="assets/eco_enzyme_ingredient.webp" onerror="this.fallback(this, 'assets/eco_enzyme_ingredient.webp')" alt="Eco Enzyme">
                         <div class="overlay"></div>
                     </div>
                     <div class="ingredient-content">
@@ -615,7 +626,7 @@
 
                 <div class="ingredient-card animate-on-scroll fade-in-up delay-2">
                     <div class="img-wrapper">
-                        <img src="assets/cananga_flower.webp" onerror="this.onerror=null; this.src='https://placehold.co/800x600/e2e8f0/64748b?text=assets/cananga_flower.webp'" alt="Cananga Flowers">
+                        <img src="assets/cananga_flower.webp" onerror="this.fallback(this, 'assets/cananga_flower.webp')" alt="Cananga Flowers">
                         <div class="overlay"></div>
                     </div>
                     <div class="ingredient-content">
@@ -626,7 +637,7 @@
 
                 <div class="ingredient-card animate-on-scroll fade-in-up delay-3">
                     <div class="img-wrapper">
-                        <img src="assets/baking_soda.webp" onerror="this.onerror=null; this.src='https://placehold.co/800x600/e2e8f0/64748b?text=assets/baking_soda.webp'" alt="Baking Soda">
+                        <img src="assets/baking_soda.webp" onerror="this.fallback(this, 'assets/baking_soda.webp')" alt="Baking Soda">
                         <div class="overlay"></div>
                     </div>
                     <div class="ingredient-content">
@@ -642,7 +653,7 @@
     <section class="methodology section-padding dark-bg" id="methodology">
         <div class="container">
             <div class="section-title text-center animate-on-scroll fade-in-up">
-                <span class="subtitle">Proses Pengolahan</span>
+                <span class="subtitle">Processing Method</span>
                 <h2>How Alcazyme is Made</h2>
             </div>
             <div class="timeline">
@@ -672,24 +683,24 @@
     </section>
 
     <!-- Photo Galleries: MASTER-DETAIL STYLE -->
-    <section class="gallery section-padding subtle-bg" id="gallery">
+    <section class="gallery section-padding" id="gallery">
         <div class="container">
             <div class="section-title text-center animate-on-scroll fade-in-up">
-                <span class="subtitle">Visual Dokumentasi Kamera</span>
-                <h2>Galeri Riset Alcazyme</h2>
-                <p>Dokumentasi portofolio profesional dari proses pembuatan hingga pengujian akhir.</p>
+                <span class="subtitle">Visual Camera Documentation</span>
+                <h2>Alcazyme Research Gallery</h2>
+                <p>Professional portfolio documentation from the manufacturing process to final testing.</p>
             </div>
 
             <!-- Gallery 1: Bahan & Pembuatan -->
             <div class="gallery-wrapper animate-on-scroll fade-in-up delay-1">
                 <div class="gallery-header">
                     <div class="icon-wrap blue" style="margin:0;"><i class="ph ph-camera"></i></div>
-                    <h3>Galeri 1: Bahan & Proses Pembuatan</h3>
+                    <h3>Gallery 1: Ingredients & Manufacturing Process</h3>
                 </div>
                 
                 <div class="gallery-main-view" onclick="openLightboxPlaylist('bahan')">
-                    <img id="main-img-bahan" src="assets/bahan_1.webp" onerror="this.fallback(this, 'assets/bahan_1.webp')" alt="Bahan 1">
-                    <div class="gallery-main-caption" id="main-cap-bahan">Pemilihan buah untuk Eco Enzyme</div>
+                    <img id="main-img-bahan" src="assets/bahan_1.webp" onerror="this.fallback(this, 'assets/bahan_1.webp')" alt="Ingredient 1">
+                    <div class="gallery-main-caption" id="main-cap-bahan">Fruit selection for Eco Enzyme</div>
                 </div>
 
                 <div class="gallery-thumbnails-nav">
@@ -705,12 +716,12 @@
             <div class="gallery-wrapper animate-on-scroll fade-in-up delay-2">
                 <div class="gallery-header">
                     <div class="icon-wrap pink" style="margin:0;"><i class="ph ph-microscope"></i></div>
-                    <h3>Galeri 2: Proses Uji Coba Alcazyme</h3>
+                    <h3>Gallery 2: Alcazyme Testing Process</h3>
                 </div>
                 
                 <div class="gallery-main-view" onclick="openLightboxPlaylist('uji')">
-                    <img id="main-img-uji" src="assets/uji_1.webp" onerror="this.fallback(this, 'assets/uji_1.webp')" alt="Uji Coba 1">
-                    <div class="gallery-main-caption" id="main-cap-uji">Uji coba pencucian noda kecap & saus</div>
+                    <img id="main-img-uji" src="assets/uji_1.webp" onerror="this.fallback(this, 'assets/uji_1.webp')" alt="Test 1">
+                    <div class="gallery-main-caption" id="main-cap-uji">Soy & tomato sauce stain washing test</div>
                 </div>
 
                 <div class="gallery-thumbnails-nav">
@@ -725,7 +736,7 @@
     </section>
 
     <!-- Results Section -->
-    <section class="results section-padding" id="results">
+    <section class="results section-padding subtle-bg" id="results">
         <div class="container">
             <div class="section-title text-center animate-on-scroll fade-in-up">
                 <span class="subtitle">Efficacy & Safety evidence</span>
@@ -843,8 +854,116 @@
         </div>
     </section>
 
+    <!-- VERTICAL EDITORIAL LAYOUT (6 PILLARS OF SUSTAINABILITY - 16:9 IMAGES) -->
+    <div class="vertical-editorial-wrapper" id="sustainability">
+        <div class="container">
+            <div class="section-title text-center animate-on-scroll fade-in-up" style="margin-bottom: 4rem;">
+                <span class="subtitle">Beyond Cleaning</span>
+                <h2>Sustainability & Product Impact</h2>
+                <p>A comprehensive approach to environmental preservation, community empowerment, and scalable eco-friendly entrepreneurship.</p>
+            </div>
+        </div>
+        
+        <!-- Pillar 1: Product Sustainability -->
+        <div class="editorial-block animate-on-scroll fade-in-up">
+            <div class="ed-img-container">
+                <img src="assets/sus_product.webp" onerror="this.fallback(this, 'assets/sus_product.webp')" alt="Product Sustainability" onclick="openLightboxSingle(this)">
+            </div>
+            <div class="ed-text">
+                <span class="ed-subtitle">01 / 06</span>
+                <h2>Product Sustainability</h2>
+                <p>Alcazyme supports sustainable household practices by utilizing biodegradable plant-based ingredients and recycled organic waste through eco enzyme fermentation. This approach reduces chemical pollution and encourages circular waste management in communities.</p>
+            </div>
+            <div class="ed-divider"></div>
+        </div>
+
+        <!-- Pillar 2: Community Implementation -->
+        <div class="editorial-block animate-on-scroll fade-in-up">
+            <div class="ed-img-container">
+                <img src="assets/sus_community.webp" onerror="this.fallback(this, 'assets/sus_community.webp')" alt="Community Implementation" onclick="openLightboxSingle(this)">
+            </div>
+            <div class="ed-text">
+                <span class="ed-subtitle">02 / 06</span>
+                <h2>Community Implementation</h2>
+                <p>Alcazyme can be produced through community-based workshops where residents learn how to ferment organic waste into eco enzyme and combine it with natural plant extracts to create an environmentally friendly detergent.</p>
+            </div>
+            <div class="ed-divider"></div>
+        </div>
+
+        <!-- Pillar 3: Ease of Production -->
+        <div class="editorial-block animate-on-scroll fade-in-up">
+            <div class="ed-img-container">
+                <img src="assets/sus_production.webp" onerror="this.fallback(this, 'assets/sus_production.webp')" alt="Ease of Production" onclick="openLightboxSingle(this)">
+            </div>
+            <div class="ed-text">
+                <span class="ed-subtitle">03 / 06</span>
+                <h2>Ease of Production</h2>
+                <p>The production process of Alcazyme is simple and does not require industrial equipment. Most materials such as aloe vera, cananga flowers, and fruit peels are commonly available in tropical regions like Indonesia.</p>
+            </div>
+            <div class="ed-divider"></div>
+        </div>
+
+        <!-- Pillar 4: Economic Potential -->
+        <div class="editorial-block animate-on-scroll fade-in-up">
+            <div class="ed-img-container">
+                <img src="assets/sus_economy.webp" onerror="this.fallback(this, 'assets/sus_economy.webp')" alt="Economic Potential" onclick="openLightboxSingle(this)">
+            </div>
+            <div class="ed-text">
+                <span class="ed-subtitle">04 / 06</span>
+                <h2>Economic Potential</h2>
+                <p>Alcazyme has potential as a small-scale eco-friendly business product. With low production costs and increasing public awareness of environmental issues, natural detergents have a growing market for home industries (UMKM).</p>
+            </div>
+            <div class="ed-divider"></div>
+        </div>
+
+        <!-- Pillar 5: Environmental Impact -->
+        <div class="editorial-block animate-on-scroll fade-in-up">
+            <div class="ed-img-container">
+                <img src="assets/sus_environment.webp" onerror="this.fallback(this, 'assets/sus_environment.webp')" alt="Environmental Impact" onclick="openLightboxSingle(this)">
+            </div>
+            <div class="ed-text">
+                <span class="ed-subtitle">05 / 06</span>
+                <h2>Environmental Impact</h2>
+                <p>By replacing synthetic surfactants with natural saponins, Alcazyme actively reduces water pollution, safeguards aquatic organisms, and promotes a holistic green lifestyle while minimizing household organic waste.</p>
+            </div>
+            <div class="ed-divider"></div>
+        </div>
+
+        <!-- Pillar 6: Future Development -->
+        <div class="editorial-block animate-on-scroll fade-in-up">
+            <div class="ed-img-container">
+                <img src="assets/sus_future.webp" onerror="this.fallback(this, 'assets/sus_future.webp')" alt="Future Development" onclick="openLightboxSingle(this)">
+            </div>
+            <div class="ed-text">
+                <span class="ed-subtitle">06 / 06</span>
+                <h2>Future Development</h2>
+                <p>Future plans include testing against a wider variety of stubborn stains, machine-wash compatibility, exploring natural aroma variations, utilizing eco-friendly packaging, and scaling up production for mass distribution.</p>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- CONCLUSION SECTION (Bridging to Team) -->
+    <section class="conclusion section-padding" id="conclusion">
+        <div class="container">
+            <div class="card glass-dark animate-on-scroll fade-in-up" style="background: var(--clr-secondary); color: white; max-width: 900px; margin: 0 auto; text-align: center; padding: 4rem 3rem;">
+                <div class="icon-wrap" style="background: rgba(18, 185, 129, 0.2); color: var(--clr-primary-light); margin: 0 auto 1.5rem;">
+                    <i class="ph ph-check-circle"></i>
+                </div>
+                <h2 style="color: white; margin-bottom: 1.5rem;">Research Conclusion</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8;">
+                    Alcazyme proves that the combination of <em>Aloe vera</em>, <em>Cananga odorata</em>, and <em>Eco Enzyme</em> extracts can produce an aromatic detergent that is highly effective at removing stubborn stains. Most importantly, this innovation is proven to be <strong>100% safe for aquatic ecosystems</strong> and supports a sustainable lifestyle.
+                </p>
+                <div style="width: 60px; height: 3px; background: var(--clr-primary); margin: 2rem auto;"></div>
+                <p style="color: var(--clr-primary-light); font-family: var(--font-serif); font-style: italic; font-size: 1.3rem;">
+                    "A small step from the younger generation for the preservation of our waters. Let's meet the researchers behind this innovation." &darr;
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Team Section -->
-    <section class="team section-padding subtle-bg" id="team">
+    <section class="team section-padding subtle-bg" id="team" style="padding-top: 2rem;">
         <div class="container">
             <div class="section-title text-center animate-on-scroll fade-in-up">
                 <span class="subtitle">The Innovators</span>
@@ -882,6 +1001,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <p>This website was created by <strong>@hendratno.penok</strong> &bull; 2026</p>
                 <p>&copy; 2026 SMP Negeri 1 Banjarmasin - Research Project. All rights reserved.</p>
             </div>
         </div>
@@ -908,7 +1028,7 @@
         // Fallback helper global
         HTMLImageElement.prototype.fallback = function(el, filename) {
             el.onerror = null; 
-            el.src = `https://placehold.co/800x600/e2e8f0/64748b?text=${filename}`;
+            el.src = `https://placehold.co/1600x900/e2e8f0/64748b?text=${filename}`;
         };
 
         // --- SCRIPT FITUR BEFORE / AFTER SLIDER ---
@@ -922,56 +1042,43 @@
             // Update function
             function updateSlider(e) {
                 if (!isDown) return;
-                
-                // Mendapatkan koordinat relatif terhadap container
                 const rect = container.getBoundingClientRect();
-                // Menghitung posisi X baik dari mouse (pageX) maupun touch (touches[0].pageX)
                 let x = (e.pageX || e.touches[0].pageX) - rect.left - window.scrollX;
-                
-                // Mencegah slider keluar batas
                 if (x < 0) x = 0;
                 if (x > rect.width) x = rect.width;
-                
-                // Konversi posisi X ke persentase
                 const percent = (x / rect.width) * 100;
-                
-                // Aplikasikan perubahan
                 imgBefore.style.width = percent + "%";
                 slider.style.left = percent + "%";
             }
 
-            // Mouse Events
             container.addEventListener('mousedown', () => { isDown = true; });
             window.addEventListener('mouseup', () => { isDown = false; });
             window.addEventListener('mousemove', updateSlider);
 
-            // Touch Events (Mobile Support)
             container.addEventListener('touchstart', () => { isDown = true; }, {passive: true});
             window.addEventListener('touchend', () => { isDown = false; });
             window.addEventListener('touchmove', updateSlider, {passive: true});
         }
-        // ------------------------------------------
 
         // Gallery Data Generation
         const galleryData = { bahan: [], uji: [] };
         for(let i=1; i<=18; i++) {
-            let cap = "Proses Persiapan Bahan #" + i;
-            if(i===1) cap = "Pemilihan buah untuk Eco Enzyme";
-            if(i===2) cap = "Ekstraksi gel Aloe Vera";
-            if(i===3) cap = "Perebusan ekstrak Bunga Kenanga";
-            if(i===4) cap = "Pencampuran seluruh bahan Alcazyme";
+            let cap = "Material Preparation Process #" + i;
+            if(i===1) cap = "Fruit selection for Eco Enzyme";
+            if(i===2) cap = "Aloe Vera gel extraction";
+            if(i===3) cap = "Boiling Cananga flower extract";
+            if(i===4) cap = "Mixing all Alcazyme ingredients";
             galleryData.bahan.push({ src: `assets/bahan_${i}.webp`, caption: cap });
         }
         for(let i=1; i<=18; i++) {
-            let cap = "Dokumentasi Pengujian #" + i;
-            if(i===1) cap = "Uji coba pencucian noda kecap & saus";
-            if(i===2) cap = "Perbandingan busa antar deterjen";
-            if(i===3) cap = "Pengujian Ekotoksisitas pada ikan kecil";
-            if(i===4) cap = "Hasil akhir: Ikan bertahan hidup 100%";
+            let cap = "Testing Documentation #" + i;
+            if(i===1) cap = "Soy & tomato sauce stain washing test";
+            if(i===2) cap = "Foam comparison between detergents";
+            if(i===3) cap = "Ecotoxicity testing on small fish";
+            if(i===4) cap = "Final result: 100% fish survival";
             galleryData.uji.push({ src: `assets/uji_${i}.webp`, caption: cap });
         }
 
-        // Render Thumbnails
         function renderThumbnails(galleryKey) {
             const strip = document.getElementById(`strip-${galleryKey}`);
             let html = '';
